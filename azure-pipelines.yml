@@ -16,6 +16,15 @@ steps:
     packageType: sdk
     version: 3.1.100
 
+- task: Npm@1
+  displayName: 'Run npm install'
+  inputs:
+    verbose: false    
+
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+  displayName: 'Write build info'
+  workingDirectory: mydotnetcoreapp/wwwroot
+
 - task: DotNetCoreCLI@2
   displayName: 'Restore project dependencies'
   inputs:
