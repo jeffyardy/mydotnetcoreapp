@@ -21,9 +21,6 @@ steps:
   inputs:
     verbose: false
 
-- script: './node_modules/.bin/node-sass $(System.DefaultWorkingDirectory) --output $(System.DefaultWorkingDirectory)'
-  displayName: 'Compile Sass assets'
-
 - task: gulp@1
   displayName: 'Run gulp tasks'
 
